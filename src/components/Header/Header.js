@@ -13,10 +13,8 @@ const query =
       headerLogo {
         url
       }
-      headerBackgroundCollection {
-        items {
-          url
-        }
+      headerBackground {
+        url
       }
     }
   }
@@ -45,22 +43,13 @@ const Header = () => {
   }
 
   return (
-    <div>
-      <div class="navbar">
-        <div>
-          <img src={page.headerLogo.url} alt="Triton Swim Club Logo"></img>
-        </div>
-        <div>
-          <a href="#About">About Us</a>
-          <a href="#News">News</a>
-          <a href="#Gallery">Gallery</a>
-          <a href="#Club">Club Info</a>
-          <a href="#Contact">Contact Us</a>
-        </div>
+    <section style={{backgroundImage: `url(${page.headerBackground.url})`
+  }} class="showcase-area" id="showcase">
+      <div class="showcase-container" id="home">
+        <h1 class="main-title" >{page.headerTitle}</h1>
+        <p>{page.headerDescription}</p>
       </div>
-      <p>{page.headerTitle}</p>
-      <p>{page.headerDescription}</p>
-    </div>
+    </section>
   );
 };
 

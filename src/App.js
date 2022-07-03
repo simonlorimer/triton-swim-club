@@ -1,3 +1,4 @@
+import Navbar from "./components/Navbar/Navbar.js";
 import Header from "./components/Header/Header.js";
 import About from "./components/About/About.js";
 import News from "./components/News/News.js";
@@ -8,7 +9,8 @@ import Footer from "./components/Footer/Footer.js";
 
 function App() {
   return (
-    <div>
+    <body>
+      <Navbar/>
       <Header/>
       <About/>
       <News/>
@@ -16,7 +18,7 @@ function App() {
       <Info/>
       <Contact/>
       <Footer/>
-    </div>
+    </body>
   );
 }
 
