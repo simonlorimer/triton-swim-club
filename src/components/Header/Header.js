@@ -8,16 +8,14 @@ const query =
 `{
   headerCollection {
     items {
-      headerTitle
-      headerDescription
       headerLogo {
         url
       }
-      headerBackgroundCollection {
-        items {
-          url
-        }
-      }
+      headerAboutText
+      headerNewsText
+      headerGalleryText
+      headerInfoText
+      headerContactText
     }
   }
 }`
@@ -46,20 +44,21 @@ const Header = () => {
 
   return (
     <div>
-      <div class="navbar">
-        <div>
+      <div className="navbar">
+        <div className="headerLogo">
           <img src={page.headerLogo.url} alt="Triton Swim Club Logo"></img>
         </div>
-        <div>
-          <a href="#About">About Us</a>
-          <a href="#News">News</a>
-          <a href="#Gallery">Gallery</a>
-          <a href="#Club">Club Info</a>
-          <a href="#Contact">Contact Us</a>
+        <div className="headerLinks">
+          <a href="#About">{page.headerAboutText}</a>
+          <a href="#News">{page.headerNewsText}</a>
+          <a href="#Gallery">{page.headerGalleryText}</a>
+          <a href="#Info">{page.headerInfoText}</a>
+          <a href="#Contact">{page.headerContactText}</a>
+        </div>
+        <div className="headerBurgerMenu">
+          <p>tbc</p>
         </div>
       </div>
-      <p>{page.headerTitle}</p>
-      <p>{page.headerDescription}</p>
     </div>
   );
 };
