@@ -2,6 +2,8 @@ import React from 'react';
 import {useState, useEffect} from "react";
 
 import { queryURL, apiKey } from '../../constants';
+import '../../index.scss';
+import './News.scss';
 
 
 const query =
@@ -41,14 +43,14 @@ const News = () => {
   }
 
   return (
-    <div>
+    <div className="newsSection margin-dynamic">
       {page.map((item, index) => {
         return (
           <div key={"newsEntry" + index} className="newsEntry">
             <p>{item.newsDate}</p>
             <h3>{item.newsTitle}</h3>
             <p>{item.newsDescription}</p>
-            <img src={item.newsImage.url} alt={item.newsTitle}/>
+            <img className="newsImage" src={item.newsImage.url} alt={item.newsTitle}/>
           </div>
         ); 
       })}

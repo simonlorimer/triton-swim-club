@@ -1,3 +1,43 @@
+@import "../../utilities/variables";
+
 .navbar {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .headerLogo {
+    .logo {
+      max-height: 90px;
+      max-width: 180px;
+
+      @media (max-width: $standard-desktop) {
+        max-height: 50px;
+        max-width: 100px;
+      }
+    }
+  }
+
+  .headerLinks {
+    a {
+      padding: 5px 10px;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: transform .2s;
+      font-size: 15px;
+      border-radius: 5px;
+    }
+
+    a:hover {
+      transform: scale(1.5);
+      background-color: #333333;
+    }
+  }
+
+  .headerBurgerMenu {
+    .hamburgerIcon {
+      max-height: 50px;
+      max-width: 100px;
+    }
+
+  }
 }

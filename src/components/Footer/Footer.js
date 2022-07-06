@@ -1,7 +1,9 @@
 import React from 'react';
 
+import '../../index.scss';
+
 const Footer = () => (
-  <div>
+  <div className="margin-dynamic">
     <p>Footer</p>
   </div>
 );

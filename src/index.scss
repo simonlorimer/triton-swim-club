@@ -1,5 +1,10 @@
+// Utilities
+@import "utilities/variables";
+
 body {
-  margin: 0;
+  background-color: #222222;
+  max-width: 1400px;
+  margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +15,36 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+//Utility Commands
+
+.gold {
+  color: $color;
+}
+
+.show-desktop {
+  display: flex;
+
+  @media (max-width: $standard-desktop) {
+    display: none;
+  }
+}
+
+.show-mobile {
+  display: flex;
+
+  @media (min-width: $standard-desktop) {
+    display: none;
+  }
+}
+
+.margin-dynamic {
+  margin: 50px 50px;
+
+  @media (max-width: $standard-desktop) {
+    margin: 25px 25px;
+  }
+
 }

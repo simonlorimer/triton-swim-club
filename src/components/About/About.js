@@ -2,6 +2,8 @@ import React from 'react';
 import {useState, useEffect} from "react";
 
 import { queryURL, apiKey } from '../../constants';
+import '../../index.scss';
+import './About.scss';
 
 const query =
 `{
@@ -39,13 +41,13 @@ const About = () => {
   }
 
   return (
-    <div>
+    <div className="aboutSection margin-dynamic">
       <div className="aboutText">
         <h1>{page.aboutTitle}</h1>
         <p>{page.aboutDescription}</p>
       </div>
-      <div className="aboutImage">
-        <img src={page.aboutImage.url} alt={page.aboutTitle}/>
+      <div className="aboutMedia">
+        <img className="aboutImage" src={page.aboutImage.url} alt={page.aboutTitle}/>
       </div>
     </div>
   );

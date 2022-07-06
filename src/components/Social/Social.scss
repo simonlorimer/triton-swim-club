@@ -1,0 +1,13 @@
+.socialIcon {
+  width: 30px;
+  height: 30px;
+  transition: transform .2s;
+  padding: 5px;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
+.socialIcon:hover {
+  transform: scale(1.5);
+  background-color: #333333;
+}
