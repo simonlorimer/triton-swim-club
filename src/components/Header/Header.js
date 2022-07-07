@@ -41,7 +41,7 @@ const Header = () => {
   }, []);
 
   if (!page) {
-    return "Loading...";
+    return "";
   }
 
   return (
