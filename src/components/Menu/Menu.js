@@ -46,7 +46,7 @@ const Menu = () => {
 
   return (
     <div className="burgerMenu">
-      <input id="menu-toggle" type="checkbox" />
+      <input id="menu-toggle" type="checkbox"/>
       <label class='menu-button-container' for="menu-toggle">
       <div class='menu-button'></div>
       </label>

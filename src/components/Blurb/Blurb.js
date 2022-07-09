@@ -3,22 +3,22 @@ import {useState, useEffect} from "react";
 
 import { queryURL, apiKey } from '../../constants';
 import '../../index.scss';
-import './About.scss';
+import './Blurb.scss';
 
 const query =
 `{
-  aboutCollection {
+  blurbCollection {
     items {
-      aboutTitle
-      aboutDescription
-      aboutImage {
+      blurbTitle
+      blurbDescription
+      blurbImage {
         url
       }
     }
   }
 }`
 
-const About = () => {
+const Blurb = () => {
   const [page, setPage] = useState(null);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const About = () => {
     })
     .then((response) => response.json())
     .then(({ data, errors }) => {
-      !errors ? setPage(data.aboutCollection.items[0]) : console.error(errors);
+      !errors ? setPage(data.blurbCollection.items[0]) : console.error(errors);
     });
   }, []);
 
@@ -41,16 +41,13 @@ const About = () => {
   }
 
   return (
-    <div id="About" className="aboutSection margin-dynamic">
-      <div className="aboutText">
-        <h1>{page.aboutTitle}</h1>
-        <p>{page.aboutDescription}</p>
-      </div>
-      <div className="aboutImage">
-        <img src={page.aboutImage.url} />
+    <div className="blurbSection margin-dynamic">
+      <div className="blurbText">
+        <h1>{page.blurbTitle}</h1>
+        <p>{page.blurbDescription}</p>
       </div>
     </div>
   );
 };
 
-export default About;
+export default Blurb;

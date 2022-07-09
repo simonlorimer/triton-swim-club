@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid $color;
+  padding: 25px 0;
 
   @media (max-width: $standard-desktop) {
     padding-bottom: 15px;
@@ -29,12 +30,11 @@
       text-decoration: none;
       transition: transform .2s;
       font-size: 15px;
-      border-radius: 5px;
     }
 
     a:hover {
       transform: scale(1.5);
-      background-color: $grey;
+      border-bottom: 1px solid $grey;
     }
   }
 

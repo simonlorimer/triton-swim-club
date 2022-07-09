@@ -43,7 +43,8 @@ const News = () => {
   }
 
   return (
-    <div className="newsSection margin-dynamic">
+    <div id="News" className="newsSection margin-dynamic">
+      <h2>News</h2>
       {page.map((item, index) => {
         return (
           <div key={"newsEntry" + index} className="newsEntry">

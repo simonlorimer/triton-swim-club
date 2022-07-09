@@ -1,12 +1,13 @@
+@import "../../utilities/variables";
+
 .socialIcon {
   width: 30px;
   height: 30px;
   transition: transform .2s;
   margin-left: 20px;
-  border-radius: 5px;
 }
 
 .socialIcon:hover {
   transform: scale(1.5);
-  background-color: #333333;
+  border-bottom: 1px solid $grey;
 }

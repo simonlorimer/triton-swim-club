@@ -3,7 +3,7 @@ import React from 'react';
 import '../../index.scss';
 
 const Contact = () => (
-  <div className="margin-dynamic">
+  <div id="Contact" className="margin-dynamic">
     <p>Contact Us</p>
   </div>
 );

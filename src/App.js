@@ -1,4 +1,5 @@
 import Header from "./components/Header/Header.js";
+import About from "./components/About/About.js";
 import News from "./components/News/News.js";
 import Gallery from "./components/Gallery/Gallery.js";
 import Info from "./components/Info/Info.js";
@@ -10,6 +11,7 @@ function App() {
   return (
     <div >
       <Header/>
+      <About/>
       <News/>
       <Gallery/>
       <Info/>

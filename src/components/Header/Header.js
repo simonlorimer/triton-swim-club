@@ -4,7 +4,7 @@ import {useState, useEffect} from "react";
 
 import { queryURL, apiKey } from '../../constants';
 import Navbar from '../Navbar/Navbar';
-import About from '../About/About';
+import Blurb from '../Blurb/Blurb';
 
 import '../../index.scss';
 import './Header.scss';
@@ -48,7 +48,7 @@ const Header = () => {
       backgroundImage: `url(${page.aboutImage.url})`
       }}>
       <Navbar/>
-      <About/>
+      <Blurb/>
     </div>
   );
 };

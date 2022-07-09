@@ -1,6 +1,9 @@
 // Utilities
 @import "utilities/variables";
 
+html{scroll-behavior:smooth}
+
+
 body {
   background-color: $dark-grey;
   
@@ -42,11 +45,10 @@ code {
 
 .margin-dynamic {
   margin: 0 50px 25px 50px;
-  padding: 25px 0;
+  
 
   @media (max-width: $standard-desktop) {
     margin: 0 25px 25px 25px;
-    padding: 25px 0;
   }
 
 }
