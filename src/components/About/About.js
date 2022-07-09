@@ -46,9 +46,6 @@ const About = () => {
         <h1>{page.aboutTitle}</h1>
         <p>{page.aboutDescription}</p>
       </div>
-      <div className="aboutMedia">
-        <img className="aboutImage" src={page.aboutImage.url} alt={page.aboutTitle}/>
-      </div>
     </div>
   );
 };

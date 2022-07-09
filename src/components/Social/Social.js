@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
+import { AiFillFacebook, AiFillInstagram, AiFillWechat } from "react-icons/ai";
 
 import { queryURL, apiKey } from '../../constants';
 import '../../index.scss';
@@ -12,6 +12,7 @@ const query =
     items {
       socialFacebookLink
       socialInstagramLink
+      socialWeChatLink
     }
   }
 }`
@@ -42,6 +43,7 @@ const Social = () => {
     <div className="socialIcons">
       <a href={page.socialFacebookLink} target="_blank" rel="noreferrer"><AiFillFacebook className="socialIcon gold"/></a>
       <a href={page.socialInstagramLink} target="_blank" rel="noreferrer"><AiFillInstagram className="socialIcon gold"/></a>
+      <a href={page.socialWeChatLink} target="_blank" rel="noreferrer"><AiFillWechat className="socialIcon gold"/></a>
     </div>
   );
 };
