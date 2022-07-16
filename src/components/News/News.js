@@ -8,10 +8,11 @@ import './News.scss';
 
 const query =
 `{
-  newsCollection {
+  newsCollection  {
     items {
-      newsDate
       newsTitle
+      newsDate
+      newsAuthor
       newsDescription
       newsImage {
         url
@@ -19,6 +20,8 @@ const query =
     }
   }
 }`
+
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 const News = () => {
   const [page, setPage] = useState(null);
@@ -44,17 +47,19 @@ const News = () => {
 
   return (
     <div id="News" className="newsSection margin-dynamic">
-      <h2>News</h2>
-      {page.map((item, index) => {
-        return (
-          <div key={"newsEntry" + index} className="newsEntry">
-            <p>{item.newsDate}</p>
-            <h3>{item.newsTitle}</h3>
-            <p>{item.newsDescription}</p>
-            <img className="newsImage" src={item.newsImage.url} alt={item.newsTitle}/>
-          </div>
-        ); 
-      })}
+      <h1>News</h1>
+      <div className="newsEntries">
+        {page.map((item, index) => {
+          return (
+            <div key={"newsEntry" + index} className="newsEntry">
+              <h2>{item.newsTitle}</h2>
+              <p>{(new Date(item.newsDate)).toLocaleDateString("en-US", options)} • {item.newsAuthor}</p>
+              <p>{item.newsDescription}</p> 
+              <img className="newsImage" src={item.newsImage.url} alt={item.newsTitle}/>
+            </div>
+          ); 
+        })}
+      </div>
     </div>
   );
 };

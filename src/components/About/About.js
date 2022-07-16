@@ -47,7 +47,7 @@ const About = () => {
         <p>{page.aboutDescription}</p>
       </div>
       <div className="aboutImage">
-        <img src={page.aboutImage.url} />
+        <img src={page.aboutImage.url} alt={page.aboutTitle}/>
       </div>
     </div>
   );
