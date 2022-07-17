@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
 
 import { queryURL, apiKey } from '../../constants';
 import './Menu.scss';
@@ -47,15 +46,15 @@ const Menu = () => {
   return (
     <div className="burgerMenu">
       <input id="menu-toggle" type="checkbox"/>
-      <label class='menu-button-container' for="menu-toggle">
-      <div class='menu-button'></div>
+      <label className='menu-button-container' for="menu-toggle">
+      <div className='menu-button'></div>
       </label>
-      <ul class="menu">
-        <li><a href="#About" class="gold">{page.headerAboutText}</a></li>
-        <li><a href="#News" class="gold">{page.headerNewsText}</a></li>
-        <li><a href="#Gallery" class="gold">{page.headerGalleryText}</a></li>
-        <li><a href="#Info" class="gold">{page.headerInfoText}</a></li>
-        <li><a href="#Contact" class="gold">{page.headerContactText}</a></li>
+      <ul className="menu">
+        <li><a href="#About" className="gold">{page.headerAboutText}</a></li>
+        <li><a href="#News" className="gold">{page.headerNewsText}</a></li>
+        <li><a href="#Gallery" className="gold">{page.headerGalleryText}</a></li>
+        <li><a href="#Info" className="gold">{page.headerInfoText}</a></li>
+        <li><a href="#Contact" className="gold">{page.headerContactText}</a></li>
       </ul>
     </div>
   );

@@ -8,12 +8,14 @@ import './News.scss';
 
 const query =
 `{
-  newsCollection  {
+  newsCollection(order: newsDate_DESC, limit: 6)  {
     items {
       newsTitle
       newsDate
       newsAuthor
       newsDescription
+      newsLinkText
+      newsLink
       newsImage {
         url
       }
@@ -51,11 +53,26 @@ const News = () => {
       <div className="newsEntries">
         {page.map((item, index) => {
           return (
-            <div key={"newsEntry" + index} className="newsEntry">
-              <h2>{item.newsTitle}</h2>
-              <p>{(new Date(item.newsDate)).toLocaleDateString("en-US", options)} • {item.newsAuthor}</p>
-              <p>{item.newsDescription}</p> 
-              <img className="newsImage" src={item.newsImage.url} alt={item.newsTitle}/>
+            <div>
+              <div key={"newsEntry" + index} className="newsEntry">
+                <h2><a href={"#news" + index}>{item.newsTitle}</a></h2>
+                <p>{(new Date(item.newsDate)).toLocaleDateString("en-US", options)} • {item.newsAuthor}</p>
+              </div>
+              <div class="modal" id={"news" + index} aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-header">
+                  <h2>{item.newsTitle}</h2>
+                  <p>{(new Date(item.newsDate)).toLocaleDateString("en-US", options)} • {item.newsAuthor}</p>
+                    <a href="#close" class="btn-close" aria-hidden="true">×</a>
+                  </div>
+                  <div class="modal-body">
+                    <p>{item.newsDescription}</p>
+                    <p><a href={item.newsLink} target="_blank" rel="noreferrer">{item.newsLinkText}</a></p>
+                    <img className="newsImage" src={item.newsImage.url} alt={item.newsTitle}/>
+                  </div>
+                  
+                </div>
+              </div>
             </div>
           ); 
         })}
