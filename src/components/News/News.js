@@ -44,7 +44,7 @@ const News = () => {
   }, []);
 
   if (!page) {
-    return "Loading...";
+    return "";
   }
 
   return (
@@ -53,19 +53,19 @@ const News = () => {
       <div className="newsEntries">
         {page.map((item, index) => {
           return (
-            <div>
+            <div className="newsChild">
               <div key={"newsEntry" + index} className="newsEntry">
                 <h2><a href={"#news" + index}>{item.newsTitle}</a></h2>
                 <p>{(new Date(item.newsDate)).toLocaleDateString("en-US", options)} • {item.newsAuthor}</p>
               </div>
-              <div class="modal" id={"news" + index} aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-header">
+              <div className="modal" id={"news" + index} aria-hidden="true">
+                <div className="modal-dialog">
+                  <div className="modal-header">
                   <h2>{item.newsTitle}</h2>
                   <p>{(new Date(item.newsDate)).toLocaleDateString("en-US", options)} • {item.newsAuthor}</p>
-                    <a href="#close" class="btn-close" aria-hidden="true">×</a>
+                    <a href="#close" className="btn-close" aria-hidden="true">×</a>
                   </div>
-                  <div class="modal-body">
+                  <div className="modal-body">
                     <p>{item.newsDescription}</p>
                     <p><a href={item.newsLink} target="_blank" rel="noreferrer">{item.newsLinkText}</a></p>
                     <img className="newsImage" src={item.newsImage.url} alt={item.newsTitle}/>

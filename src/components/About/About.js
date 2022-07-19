@@ -37,7 +37,7 @@ const About = () => {
   }, []);
 
   if (!page) {
-    return "Loading...";
+    return "";
   }
 
   return (

@@ -36,7 +36,7 @@ const Social = () => {
   }, []);
 
   if (!page) {
-    return "Loading...";
+    return "";
   }
 
   return (
